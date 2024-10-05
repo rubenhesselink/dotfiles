@@ -1,0 +1,8 @@
+# .gitconfig
+# .config/github-copilot
+# .config/nvim/lazy-lock.json
+# .config/btop/btop.log
+**/node_modules/
+.config/aider
+.config/tmux/plugins/*
+
