@@ -602,6 +602,7 @@ require('lazy').setup({
         --     },
         --   },
         -- },
+        bashls = {},
         marksman = {},
         lua_ls = {
           -- cmd = {...},
@@ -973,3 +974,6 @@ end)
 vim.keymap.set('n', '<C-l>', function()
   harpoon:list():select(4)
 end)
+
+-- Set keymap for my tmux sessionizer script
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer.sh<CR>')

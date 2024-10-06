@@ -61,4 +61,6 @@ source <(fzf --zsh)
 
 eval "$(starship init zsh)"
 
-tms start
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
