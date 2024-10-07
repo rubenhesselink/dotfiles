@@ -977,4 +977,5 @@ end, { desc = 'Harpoon list [4]' })
 
 -- Set keymap for my tmux sessionizer script
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer.sh<CR>', { noremap = true, desc = 'Select a tmux session' })
+vim.keymap.set('n', '<C-g>', '<cmd> silent !tmux neww tmux-lazygit.sh<CR>', { noremap = true, desc = 'Open Lazy[g]it' })
 vim.keymap.set('n', '<leader>x', 'cmd>!chmod +x %<CR>', { silent = true, noremap = true, desc = 'Make file executable' })
