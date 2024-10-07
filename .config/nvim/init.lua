@@ -976,4 +976,4 @@ vim.keymap.set('n', '<C-l>', function()
 end)
 
 -- Set keymap for my tmux sessionizer script
-vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer.sh<CR>')
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer.sh<CR>', { noremap = true, desc = 'Select a tmux session' })
