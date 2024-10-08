@@ -5,3 +5,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
 bindkey -s ^f "tmux-sessionizer.sh\n"
+bindkey -s ^w "tmux-worktree-switch.sh\n"

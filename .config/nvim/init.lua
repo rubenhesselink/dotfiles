@@ -246,7 +246,6 @@ require('lazy').setup({
         { '<leader>d', group = '[D]ocument' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
@@ -977,6 +976,7 @@ end, { desc = 'Harpoon list [4]', noremap = true })
 
 -- Set keymap for my tmux sessionizer script
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer.sh<CR>', { noremap = true, desc = 'Select a tmux session' })
-vim.keymap.set('n', '<C-c>', '<cmd>silent !tmux neww tmux-cheatsheet.sh<CR>', { noremap = true, desc = 'Open [C]heatsheet' })
+vim.keymap.set('n', '<C-i>', '<cmd>silent !tmux neww tmux-cheatsheet.sh<CR>', { noremap = true, desc = 'Open Cheatsheet' })
 vim.keymap.set('n', '<C-g>', '<cmd> silent !tmux neww tmux-lazygit.sh<CR>', { noremap = true, desc = 'Open Lazy[g]it' })
+vim.keymap.set('n', '<leader>w', '<cmd> silent !tmux neww tmux-worktree-switch.sh<CR>', { noremap = true, desc = 'Open [W]orktree switcher' })
 vim.keymap.set('n', '<leader>x', 'cmd>!chmod +x %<CR>', { silent = true, noremap = true, desc = 'Make file executable' })
