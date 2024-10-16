@@ -551,7 +551,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         pyright = {
           settings = {
             python = {
@@ -565,16 +565,16 @@ require('lazy').setup({
             },
           },
         },
-        ruff = {
-          trace = 'messages',
-          init_options = {
-            settings = {
-              logLevel = 'debug',
-            },
-          },
-        },
+        -- ruff = {
+        --   trace = 'messages',
+        --   init_options = {
+        --     settings = {
+        --       logLevel = 'debug',
+        --     },
+        --   },
+        -- },
         zls = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -603,6 +603,7 @@ require('lazy').setup({
         -- },
         bashls = {},
         marksman = {},
+        ts_ls = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -697,8 +698,8 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        html = { 'djlint' },
-        htmldjango = { 'djlint' },
+        -- html = { 'djlint' },
+        -- htmldjango = { 'djlint' },
         -- Conform can also run multiple formatters sequentially
         -- python = { 'ruff' },
         --
@@ -978,5 +979,4 @@ end, { desc = 'Harpoon list [4]', noremap = true })
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer.sh<CR>', { noremap = true, desc = 'Select a tmux session' })
 vim.keymap.set('n', '<C-i>', '<cmd>silent !tmux neww tmux-cheatsheet.sh<CR>', { noremap = true, desc = 'Open Cheatsheet' })
 vim.keymap.set('n', '<C-g>', '<cmd> silent !tmux neww tmux-lazygit.sh<CR>', { noremap = true, desc = 'Open Lazy[g]it' })
-vim.keymap.set('n', '<leader>w', '<cmd> silent !tmux neww tmux-worktree-switch.sh<CR>', { noremap = true, desc = 'Open [W]orktree switcher' })
 vim.keymap.set('n', '<leader>x', 'cmd>!chmod +x %<CR>', { silent = true, noremap = true, desc = 'Make file executable' })
