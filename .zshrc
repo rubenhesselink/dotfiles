@@ -45,6 +45,8 @@ alias aider="aider --env ~/.dotfiles/.config/aider/.env"
 
 alias zigdev="~/test/zig-macos-aarch64-0.14.0-dev.1722+69ce7f0e0/zig"
 
+unalias g
+
 # Zoxide
 eval "$(zoxide init zsh)"
 
@@ -64,3 +66,6 @@ eval "$(starship init zsh)"
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   tmux attach-session -t default || tmux new-session -s default
 fi
+
+[ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env"  # g shell setup
+
