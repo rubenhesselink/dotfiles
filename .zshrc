@@ -41,10 +41,6 @@ setopt hist_find_no_dups
 # Aliasses
 alias cfdn="sshuttle @/Users/rubenhesselink/.ssh/sshuttle.conf"
 
-alias aider="aider --env ~/.dotfiles/.config/aider/.env"
-
-alias zigdev="~/test/zig-macos-aarch64-0.14.0-dev.1722+69ce7f0e0/zig"
-
 unalias g
 
 # Zoxide
