@@ -1,7 +1,9 @@
 local configs = require "nvchad.configs.lspconfig"
 
 local servers = {
-  html = {},
+  html = {
+    filetypes = { "html", "templ" },
+  },
   cssls = {},
   bashls = {},
   gopls = {},
@@ -23,6 +25,10 @@ local servers = {
       "--enable-log",
     },
   },
+  htmx = {
+    filetypes = { "html", "templ" },
+  },
+  -- templ = {},
 }
 
 for name, opts in pairs(servers) do

@@ -7,19 +7,15 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-	'exec-and-forget sketchybar',
 	'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
 	'exec-and-forget open -n /Applications/AlDente.app',
 	'exec-and-forget open -n /Applications/OrbStack.app',
 	'exec-and-forget open -n /Applications/1Password.app',
 	'exec-and-forget open -n /Applications/Slack.app',
 	'exec-and-forget open -n /Applications/Brave\ Browser.app',
-	'exec-and-forget open -n /Applications/Alacritty.app'
+	'exec-and-forget open -n /Applications/Alacritty.app',
 ]
 
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
-]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -98,8 +94,6 @@ outer.right =      10
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 alt-b = 'exec-and-forget open -n /Applications/Brave\ Browser.app'
-alt-p = 'exec-and-forget open -n /Applications/1Password.app'
-alt-s = 'exec-and-forget open -n /Applications/Slack.app'
 alt-f = 'fullscreen'
 alt-q = 'close'
 
@@ -126,15 +120,17 @@ alt-shift-equal = 'resize smart +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'  # Terminal
 alt-2 = 'workspace 2'  # Web
-alt-3 = 'workspace 3'  # Slack
-alt-4 = 'workspace 4'  # 1Password
-alt-5 = 'workspace 5'  # Misc
+alt-3 = 'workspace 3'  # Misc
+alt-s = 'workspace s'  # Slack
+alt-p = 'workspace p'  # 1Password
+alt-c = 'workspace c'  # Calendar
+alt-m = 'workspace m'  # Mail
+alt-r = 'workspace r'  # Reminders
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -170,12 +166,24 @@ run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace 3'
-
-# [[on-window-detected]]
-# if.app-id = 'com.1password.1password'
-# run = 'move-node-to-workspace 4'
+run = 'move-node-to-workspace s'
 
 [[on-window-detected]]
-run = 'move-node-to-workspace 5'
+if.app-id = 'com.1password.1password'
+run = 'move-node-to-workspace p'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace c'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace m'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = 'move-node-to-workspace r'
+
+[[on-window-detected]]
+run = 'move-node-to-workspace 3'
 
