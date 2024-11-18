@@ -1,4 +1,5 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
+export EDITOR=nvim
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # Define where zinit and it's plugins will live.
