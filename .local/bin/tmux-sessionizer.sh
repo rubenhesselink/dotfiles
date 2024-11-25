@@ -16,7 +16,6 @@ if ! tmux has-session -t "=$session_name" 2> /dev/null; then
 	tmux send-keys -t "$session_name:1" "nvim ." Enter
 	tmux new-window -n "terminal" -c "$session" -t "$session_name"
 	tmux new-window -n "4d" -c "$session" -t "$session_name"
-	tmux new-window -n "notes" -c "$notes" -t "$session_name"
 
 	tmux select-window -t "$session_name:1"
 fi

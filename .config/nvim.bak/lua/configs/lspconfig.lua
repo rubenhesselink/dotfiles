@@ -6,8 +6,6 @@ local servers = {
   },
   cssls = {},
   bashls = {},
-  gopls = {},
-
   basedpyright = {
     settings = {
       basedpyright = {
@@ -21,14 +19,15 @@ local servers = {
   },
   djlsp = {
     cmd = {
-      "djlsp",
+      "/Users/rubenhesselink/projects/django-template-lsp/env/bin/djlsp",
       "--enable-log",
     },
   },
   htmx = {
-    filetypes = { "html", "templ" },
+    filetypes = { "html" },
   },
-  -- templ = {},
+  marksman = {},
+  ts_ls = {},
 }
 
 for name, opts in pairs(servers) do
