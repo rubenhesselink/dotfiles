@@ -41,6 +41,13 @@ setopt hist_find_no_dups
 
 # Aliasses
 alias cfdn="sshuttle @/Users/rubenhesselink/.ssh/sshuttle.conf"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias vim="nvim"
+alias vi="nvim"
 
 unalias g
 

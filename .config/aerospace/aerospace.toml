@@ -14,7 +14,8 @@ after-startup-command = [
 	'exec-and-forget open -n /Applications/Slack.app',
 	'exec-and-forget open -n /Applications/Brave\ Browser.app',
 	'exec-and-forget open -n /Applications/Alacritty.app',
-  'exec-and-forget open -n /Applications/Obsidian.app',
+	'exec-and-forget open -n /Applications/Obsidian.app',
+	'exec-and-forget open -n /Applications/ChatGPT.app',
 ]
 
 
@@ -128,6 +129,7 @@ alt-c = 'workspace c'  # Calendar
 alt-m = 'workspace m'  # Mail
 alt-r = 'workspace r'  # Reminders
 alt-o = 'workspace o'  # Obsidian
+alt-g = 'workspace g'  # ChatGPT
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -185,6 +187,10 @@ run = 'move-node-to-workspace m'
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
 run = 'move-node-to-workspace r'
+
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = 'move-node-to-workspace g'
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
