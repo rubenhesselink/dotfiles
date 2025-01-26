@@ -7,15 +7,16 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-	'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
-	'exec-and-forget open -n /Applications/AlDente.app',
-	'exec-and-forget open -n /Applications/OrbStack.app',
-	'exec-and-forget open -n /Applications/1Password.app',
-	'exec-and-forget open -n /Applications/Slack.app',
-	'exec-and-forget open -n /Applications/Brave\ Browser.app',
-	'exec-and-forget open -n /Applications/Alacritty.app',
-	'exec-and-forget open -n /Applications/Obsidian.app',
-	'exec-and-forget open -n /Applications/ChatGPT.app',
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
+  'exec-and-forget open -n /Applications/AlDente.app',
+  'exec-and-forget open -n /Applications/OrbStack.app',
+  'exec-and-forget open -n /Applications/1Password.app',
+  'exec-and-forget open -n /Applications/Slack.app',
+  'exec-and-forget open -n /Applications/Brave\ Browser.app',
+  # 'exec-and-forget open -n /Applications/Alacritty.app',
+  'exec-and-forget open -n /Applications/Ghostty.app',
+  'exec-and-forget open -n /Applications/Obsidian.app',
+  'exec-and-forget open -n /Applications/ChatGPT.app',
 ]
 
 
@@ -65,11 +66,11 @@ preset = 'qwerty'
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+inner.vertical = 10
+outer.left = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -120,16 +121,16 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'  # Terminal
-alt-2 = 'workspace 2'  # Web
-alt-3 = 'workspace 3'  # Misc
-alt-s = 'workspace s'  # Slack
-alt-p = 'workspace p'  # 1Password
-alt-c = 'workspace c'  # Calendar
-alt-m = 'workspace m'  # Mail
-alt-r = 'workspace r'  # Reminders
-alt-o = 'workspace o'  # Obsidian
-alt-g = 'workspace g'  # ChatGPT
+alt-1 = 'workspace 1' # Terminal
+alt-2 = 'workspace 2' # Web
+alt-3 = 'workspace 3' # Misc
+alt-s = 'workspace s' # Slack
+alt-p = 'workspace p' # 1Password
+alt-c = 'workspace c' # Calendar
+alt-m = 'workspace m' # Mail
+alt-r = 'workspace r' # Reminders
+alt-o = 'workspace o' # Obsidian
+alt-g = 'workspace g' # ChatGPT
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -149,7 +150,10 @@ alt-shift-semicolon = 'mode service'
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -163,6 +167,10 @@ alt-shift-l = ['join-with right', 'mode main']
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = ['layout tiling', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id = 'com.brave.Browser'
@@ -198,4 +206,3 @@ run = 'move-node-to-workspace o'
 
 [[on-window-detected]]
 run = 'move-node-to-workspace 3'
-
